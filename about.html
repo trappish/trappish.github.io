@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar | CodeMentor</title>
+    <link rel="icon" href="icon.jpeg" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        header {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            background: #0a5d63;
+            height: 75px;
+        }
+
+        .logo h2 {
+            font-size: 1.8rem;
+            text-align: left;
+            margin-left: 0;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 1.2rem;
+        }
+
+        nav ul li a {
+            color: aliceblue;
+        }
+
+        .menu-icons {
+            display: none;
+        }
+
+        .menu-icons i {
+            font-size: 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f39c12;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .logo img {
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                right: 0;
+                background: #000;
+                flex-direction: column;
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.4s;
+            }
+
+            nav ul li {
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            .menu-icons {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /* CSS for social media icons */
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f1c40f;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>Trappish-Music</h2>
+            </div>
+            <ul id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-icons">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>About Trappish Music Records</h1>
+        <div class="logo">
+            <img src="hero-bg - copy (2).jpg" alt="Trappish Music Records Logo">
+        </div>
+        <p>Welcome to Trappish Music Records, your premier destination for the freshest and most innovative sounds in the trap music scene. Established in 2017, we have been dedicated to discovering and promoting the most talented artists in the industry.</p>
+        <p>At Trappish Music Records, we believe in the power of music to bring people together and to express the deepest emotions and experiences of life. Our mission is to provide a platform for artists to share their unique voices and to connect with fans around the world.</p>
+        <p>Our team is passionate about music and committed to supporting our artists at every stage of their careers. From recording and production to marketing and distribution, we offer a full range of services to help our artists succeed.</p>
+        <p>Thank you for visiting our website. We invite you to explore our music, learn more about our artists, and join us on this incredible musical journey.</p>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://web.facebook.com/ishkevinpage/?_rdc=1&_rdr" target="_blank" class="fa-brands fa-facebook-f"></a>
+        <a href="https://www.instagram.com/ishkevin_/" target="_blank" class="fa-brands fa-instagram"></a>
+        <a href="https://www.youtube.com/@IshKevin" target="_blank" class="fa-brands fa-youtube"></a>
+        <a href="https://x.com/Ishkevin_" target="_blank" class="fa-brands fa-x"></a>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Trappish Music Records. All Rights Reserved.
+    </div>
+
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script>
+        let menuIcon = document.querySelector(".menu-icons i");
+        let navLinks = document.querySelector("#navLinks");
+
+        menuIcon.addEventListener("click", () => {
+            if (navLinks.style.maxHeight === "0px" || navLinks.style.maxHeight === "") {
+                navLinks.style.maxHeight = "350px";
+            } else {
+                navLinks.style.maxHeight = "0";
+            }
+        });
+    </script>
+</body>
+
+</html>

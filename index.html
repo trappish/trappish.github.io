@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar | CodeMentor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        header {
+            background-image: url('see.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 8%;
+            background: #0a5d63;
+            height: 75px;
+        }
+
+        .logo h2 {
+            font-size: 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 1.2rem;
+        }
+
+        nav ul li a {
+            color: aliceblue;
+        }
+
+        .menu-icons {
+            display: none;
+        }
+
+        .menu-icons i {
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            height: calc(100vh - 75px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                right: 0;
+                background: #000;
+                flex-direction: column;
+                overflow: hidden;
+                transition: max-height 0.4s;
+            }
+
+            nav ul li:first-child {
+                padding-top: 20px;
+            }
+
+            nav ul li:last-child {
+                padding-bottom: 20px;
+            }
+
+            .menu-icons {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        /* CSS for social media icons */
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #f1c40f;
+        }
+    </style>
+    <link rel="icon" href="icon.jpeg" type="image/png">
+</head>
+
+<body>
+
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <h2>Trappish-Music</h2>
+            </div>
+            <ul id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="menu-icons">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+
+        <div class="hero-section">
+            <h1>Welcome</h1>
+        </div>
+    </header>
+
+    <!-- Social media icons -->
+    <div class="social-icons">
+        <a href="https://web.facebook.com/ishkevinpage/?_rdc=1&_rdr" target="_blank" class="fa-brands fa-facebook-f"></a>
+        <a href="https://www.instagram.com/ishkevin_/" target="_blank" class="fa-brands fa-instagram"></a>
+        <a href="https://www.youtube.com/@IshKevin" target="_blank" class="fa-brands fa-youtube"></a>
+        <a href="https://x.com/Ishkevin_" target="_blank" class="fa-brands fa-x"></a>
+    </div>
+
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    <script>
+        let menuIcon = document.querySelector(".menu-icons i");
+        let navLinks = document.querySelector("#navLinks");
+
+        menuIcon.addEventListener("click", () => {
+            if (navLinks.style.maxHeight === "0px" || navLinks.style.maxHeight === "") {
+                navLinks.style.maxHeight = "350px";
+            } else {
+                navLinks.style.maxHeight = "0";
+            }
+        });
+
+        // Function to update background image properties
+        function updateBackgroundImage() {
+            let header = document.getElementById('header');
+            header.style.backgroundSize = 'cover';
+            header.style.backgroundPosition = 'center';
+        }
+
+        // Call the function initially and on window resize
+        updateBackgroundImage();
+        window.addEventListener('resize', updateBackgroundImage);
+    </script>
+</body>
+
+</html>
